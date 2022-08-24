@@ -42,9 +42,9 @@ chrome.tabs.onUpdated.addListener((_tabId, _changeInfo, tab) => {
     if (tab.url.match(new RegExp('[?&#]'+s, 'g'))){
         chrome.tabs.update(tab.id,
             { url: tab.url.replace(new RegExp(s, 'g'), '') });
-	}
-    if (tab.url.match(new RegExp('[?&#]$','g'))){
-        chrome.tabs.update(tab.id,
-            { url: tab.url.replace(new RegExp('[\?\&#]$','g'),'') });
+        if (tab.url.match(new RegExp('[?&#]$','g'))){
+            chrome.tabs.update(tab.id,
+                { url: tab.url.replace(new RegExp('[\?\&#]$','g'),'') });
+	    }
 	}
 });
