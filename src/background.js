@@ -9,6 +9,7 @@ chrome.tabs.onUpdated.addListener((_tabId, _changeInfo, tab) => {
 			'bdmlrec',
 			'bflink_id',
 			'btag',
+			'brid',
 			'campaign_id',
 			'CMP',
 			'courrier_mail_session_id',
